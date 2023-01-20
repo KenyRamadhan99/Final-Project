@@ -1,6 +1,7 @@
 from selenium import webdriver
 import unittest
 import time
+from random_username.generate import generate_username
 import call
 from selenium import webdriver 
 from selenium.webdriver.common.by import By
@@ -25,7 +26,7 @@ class TestCreate(unittest.TestCase):
         time.sleep(2)
 
         # dibawah ini untuk input form 
-        browser.find_element(By.XPATH,"//*[@id='Name']").send_keys("Kenzi")
+        browser.find_element(By.XPATH,"//*[@id='Name']").send_keys(generate_username)
         time.sleep(2)
         browser.find_element(By.XPATH,"//*[@id='Company']").send_keys("SanberCode") 
         time.sleep(2)
